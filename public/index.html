@@ -1,0 +1,819 @@
+<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Standard meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Meta description for the page">
+        <meta name="keywords" content="">
+        <link rel="canonical" href="https://www.gardnersdigital.com/">
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Gardners Digital Solutions | PA Web Design"/>
+        <meta property="og:description" content="Meta description for the page"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://www.gardnersdigital.com/"/>
+        <meta property="og:image" content="/assets/images/logo-small.png"/>
+        <meta property="og:image:secure_url" content="/assets/images/logo-small.png"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preloads -->
+        <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
+        
+            <link rel="preload" as="image" href="/assets/images/landing.jpg"/>
+        
+
+        <!-- Sitewide Stylesheets and Scripts -->
+        <link rel="stylesheet" href="/assets/css/root.css">
+        <link rel="stylesheet" href="/assets/css/dark.css">
+        <script defer src="/assets/js/dark.js"></script>
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+        var CSbody = document.querySelector("body");
+        const CSnavbarMenu = document.querySelector("#cs-navigation");
+        const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+        // CShamburgerMenu.addEventListener('click', function() {
+        //     CShamburgerMenu.classList.toggle("cs-active");
+        //     CSnavbarMenu.classList.toggle("cs-active");
+        //     CSbody.classList.toggle("cs-open");
+        //     // run the function to check the aria-expanded value
+        //     ariaExpanded();
+        // });
+
+        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+        function ariaExpanded() {
+            const csUL = document.querySelector('#cs-expanded');
+            const csExpanded = csUL.getAttribute('aria-expanded');
+
+            if (csExpanded === 'false') {
+                csUL.setAttribute('aria-expanded', 'true');
+            } else {
+                csUL.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        document.addEventListener('scroll', (e) => {
+            const scroll = document.documentElement.scrollTop;
+            if(scroll >= 100){
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
+        });
+
+
+        // mobile nav toggle code
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        for (const item of dropDowns) {
+            const onClick = () => {
+                item.classList.toggle('cs-active')
+            }
+            item.addEventListener('click', onClick)
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Gardners Digital Solutions",
+            "image": "/assets/images/landing.jpg",
+            "telephone": "(717) 818-1625",
+            "email": "adam@oxideconsulting.com",
+            
+                "address": {
+                    "@type": "PostalAddress",
+                        "streetAddress": "First Address Line, Second Address Line"
+                    
+                    ,
+                        "addressLocality": "Carlisle"
+                    
+                    ,
+                        "addressRegion": "PA"
+                    
+                    ,
+                        "postalCode": "80206"
+                    
+                    ,
+                        "addressCountry": "US"
+                    
+                },
+            
+            "url": "https://www.gardnersdigital.com/",
+            
+                "sameAs": [
+                        
+                        "https://www.facebook.com/"
+                    
+                        ,
+                        "https://www.instagram.com/"
+                    ]
+            
+        }
+    </script>
+
+
+        <title>Gardners Digital Solutions | PA Web Design</title>
+    </head>
+    <body>
+        <!--Screen reader skip main nav-->
+        <a class="skip" aria-label="skip to main content" href="#main" tabindex="1">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home" tabindex="2">
+            <img src="/assets/svgs/logo-black.svg" alt="" width="210" height="29" aria-hidden="true" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="cs-expanded-ul" aria-label="mobile menu toggle" tabindex="4">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul">
+                    
+
+                    
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="/" class="cs-li-link  cs-active "  aria-current="page" >
+                                    Home
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="/about/" class="cs-li-link " >
+                                    About Us
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="false" class="cs-li-link " >
+                                    Projects
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  cs-dropdown  ">
+
+                            
+                            
+
+                                
+                                
+                                
+                                    
+                                
+                                    
+                                
+
+                                
+                                <button
+                                    class="cs-li-link cs-dropdown-button "
+                                    aria-expanded="false"
+                                    aria-controls="dropdown-Services"
+                                    aria-label="dropdown-Services"
+                                >
+                                    Services
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </button>
+
+                                
+                                <ul class="cs-drop-ul" id="dropdown-Services">
+                                    
+                                        <li class="cs-drop-li">
+                                            <a href="/service-one/" class="cs-li-link cs-drop-link">Service One</a>
+                                        </li>
+                                    
+                                        <li class="cs-drop-li">
+                                            <a href="/service-two/" class="cs-li-link cs-drop-link">service Two</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="/pricing/" class="cs-li-link " >
+                                    Reviews
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="/reviews/" class="cs-li-link " >
+                                    Reviews
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="cs-li  ">
+
+                            
+                            
+                                
+                                <a href="/blog/" class="cs-li-link " >
+                                    Blog
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+                            
+                        
+
+                        
+                        <li class="cs-li  cs-hide-on-desktop">
+
+                            
+                            
+                                
+                                <a href="/contact/" class="cs-li-link " >
+                                    Contact
+                                </a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <button id="dark-mode-toggle" aria-label="dark mode toggle" tabindex="3">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+            <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+        </button>
+    </div>
+</header>
+        <main id="main">
+            
+
+<!-- ============================================ -->
+<!--                   Hero                       -->
+<!-- ============================================ -->
+
+<section id="hero-408">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title"><span class="cs-color">Attention to Detail,</span> Commitment to You.</h2>
+            <p class="cs-text">
+                World-class websites and digital solutions for your organization from a small team of dedicated professionals. <br>
+                Starting at just $150/mo.
+            </p>
+            <a href="" class="cs-button-solid">Learn More</a>
+        </div>
+        <div class="cs-stat-group">
+            <picture class="cs-background">
+                <source srcset="assets/images/devices.png">
+                <source srcset="assets/images/devices.png">
+                <img loading="lazy" decoding="async" src="assets/images/devices.png" alt="leaves" width="842" height="737" aria-hidden="true">
+            </picture>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-1377">
+    <div class="cs-container">
+        <div class="cs-content">
+<!--            <span class="cs-topper">Our Services</span>-->
+            <h2 class="cs-title">Core Understanding, <br> Custom Solutions.</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async" src="assets/images/no-wordpress.svg" alt="icon" width="48" height="48">
+                <a href="/" class="cs-link">
+                    <h3 class="cs-h3">No Wordpress.</h3>
+                    <picture class="cs-arrow-wrapper">
+                        <img class="cs-arrow" decoding="async"
+                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                             alt="arrow" width="413" height="374" aria-hidden="true">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async" src="assets/images/code.svg" alt="icon" width="48" height="48">
+                <a href="/" class="cs-link">
+                    <h3 class="cs-h3">Hand-Built Just For You</h3>
+                    <picture class="cs-arrow-wrapper">
+                        <img class="cs-arrow" decoding="async"
+                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                             alt="arrow" width="413" height="374" aria-hidden="true">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async" src="assets/images/integration.svg" alt="icon" width="48" height="48">
+                <a href="/" class="cs-link">
+                    <h3 class="cs-h3">Continuous Improvements</h3>
+                    <picture class="cs-arrow-wrapper">
+                        <img class="cs-arrow" decoding="async"
+                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                             alt="arrow" width="413" height="374" aria-hidden="true">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async" src="assets/images/repair.svg" alt="icon" width="48" height="48">
+                <a href="/" class="cs-link">
+                    <h3 class="cs-h3">Lifetime Maintenance</h3>
+                    <picture class="cs-arrow-wrapper">
+                        <img class="cs-arrow" decoding="async"
+                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                             alt="arrow" width="413" height="374" aria-hidden="true">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">About Company Title</h2>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">
+                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
+                    </p>
+                    <span class="cs-name">Justin Time</span>
+                    <span class="cs-job">CEO-Founder</span>
+                    <img 
+                    class="cs-quote-icon"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                    alt="gavel"
+                    width="136"
+                    height="77"/>
+                </div>
+                <a href="/about" class="cs-button-solid">More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Extra Content To Rank             -->
+    <!-- ============================================ -->
+
+    <section id="sbs-r">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">SEO Ranking</span>
+                <h2 class="cs-title">Talk about a main service keyword</h2>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <p class="cs-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur, iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo quia neque est quas, in placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi laudantium voluptatibus rem libero error minus quia eligendi sapiente eos.
+                </p>
+                <a href="/blog" class="cs-button-solid">Read our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
+
+    <section id="gallery">
+        <div class="cs-container">
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
+            <div class="cs-image-group">
+                <!-- Row 1-->
+                <div class="cs-row cs-row-1">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 2 -->
+                <div class="cs-row cs-row-2">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 3 -->
+                <div class="cs-row cs-row-3">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
+
+                </div>
+            </div>
+            <a href="/projects" class="cs-button-solid">View Full Gallery</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Reviews                    -->
+    <!-- ============================================ -->
+
+    <section id="reviews">
+        <div class="cs-container">
+            <span class="cs-topper">Our Reviews</span>
+            <h2 class="cs-title">Words From Our Customers</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
+            </p>
+            <ul class="cs-card-group">
+                <!-- Review 1 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80"/>
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jon Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16"/>
+                </li>
+                <!-- Review 2 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80"/>
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jane Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16"/>
+                </li>
+            </ul>
+            <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+<!--             Final Call to Action             -->
+<!-- ============================================ -->
+
+<section id="cta">
+    <div class="container">
+        <h2 class="title">
+            Get It Done
+            <br/>
+            With Us Today
+        </h2>
+        <p>
+            Say something catchy, informative, and encouraging to click the button to go to the contact page. I like to add these to the bottom of all pages.
+        </p>
+        <a href="/contact" class="cs-button-solid">Get an Estimate Now</a>
+    </div>
+    <picture>
+        <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+        <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="lazy" width="2500" height="1667">
+    </picture>
+
+</section>
+
+        </main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="left-section">
+            <a class="logo" href="/"><img loading="lazy" decoding="async" src="/assets/svgs/logo-white.svg" alt="logo" width="264" height="78"></a>
+            <p>
+                Extra content if you need it, if not you can delete this whole p tag. I usually do.
+            </p>
+        </div>
+        <div class="right-section">
+            <div class="lists">
+                <ul>
+                    <li>
+                        <h2>Information</h2>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="/reviews">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>Services</h2>
+                    </li>
+                    <li>Web Design</li>
+                    <li>SEO</li>
+                    <li>Service4</li>
+                    <li>Service5</li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>Contact</h2>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            First Address Line<br>
+                            Second Address Line<br>
+                            Carlisle
+                            PA
+                            80206
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:717-818-1625">
+                            T:
+                            (717) 818-1625
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:adam@oxideconsulting.com">Click to Email</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="credit">
+        <span>Designed and Developed by</span>
+        <a href="/" target="_blank" rel="noopener">Gardners Digital Solutions</a>
+        <span class="copyright">
+            Copyright 2025 - Present</span>
+    </div>
+</footer>
+
+
+    </body>
+</html>
