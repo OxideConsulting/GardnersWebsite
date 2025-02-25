@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+<g>
+	<path style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="&#10;&#9;&#9;M271.67,157.131c0-9.132-1.035-18.022-2.989-26.562l22.499-18.522l-30.001-51.964L233.856,70.32&#10;&#9;&#9;c-12.959-12.062-28.617-21.258-45.974-26.577L183.091,15h-60.002l-4.79,28.743c-17.357,5.319-33.016,14.516-45.974,26.577&#10;&#9;&#9;L45.001,60.084L15,112.048l22.499,18.522c-1.954,8.54-2.989,17.43-2.989,26.562s1.035,18.022,2.989,26.562L15,202.215&#10;&#9;&#9;l30.001,51.964l27.323-10.236c12.959,12.062,28.617,21.258,45.974,26.577l4.79,28.743h60.002l4.79-28.743&#10;&#9;&#9;c17.357-5.319,33.016-14.516,45.974-26.577l27.323,10.236l30.001-51.964l-22.499-18.522&#10;&#9;&#9;C270.635,175.154,271.67,166.264,271.67,157.131z"/>
+	<path style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="&#10;&#9;&#9;M481.141,381.468c0-7.423-0.841-14.649-2.43-21.591L497,344.822l-24.387-42.239l-22.21,8.321&#10;&#9;&#9;c-10.533-9.804-23.262-17.28-37.37-21.604l-3.894-23.363h-48.773l-3.894,23.363c-14.109,4.324-26.837,11.799-37.37,21.604&#10;&#9;&#9;l-22.21-8.321l-24.387,42.239l18.288,15.056c-1.589,6.941-2.43,14.168-2.43,21.591c0,7.423,0.841,14.649,2.43,21.591&#10;&#9;&#9;l-18.288,15.056l24.387,42.239l22.21-8.321c10.533,9.804,23.262,17.28,37.37,21.603L360.367,497h48.773l3.894-23.363&#10;&#9;&#9;c14.109-4.324,26.837-11.799,37.37-21.603l22.21,8.321L497,418.115l-18.288-15.056C480.3,396.118,481.141,388.891,481.141,381.468z&#10;&#9;&#9;"/>
+	
+		<circle style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="153.09" cy="157.131" r="58.5"/>
+	
+		<circle style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="384.753" cy="381.468" r="35"/>
+	
+		<polyline style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="&#10;&#9;&#9;345.473,50.95 384.75,15 424.027,50.95 &#9;"/>
+	
+		<line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="384.754" y1="195.734" x2="384.754" y2="15"/>
+	<g>
+		
+			<polyline style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="&#10;&#9;&#9;&#9;113.813,395.216 153.09,359.266 192.367,395.216 &#9;&#9;"/>
+		
+			<line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="153.094" y1="497" x2="153.094" y2="359.266"/>
+	</g>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

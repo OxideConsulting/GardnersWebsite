@@ -5,7 +5,7 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #003cff;
+    --primary: #fffaf6;
     --primaryLight: #ffd675;
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
@@ -68,21 +68,26 @@
     text-align: inherit;
   }
   .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: var(--primary);
-    width: auto;
-    padding: 0 1.875rem;
-    text-decoration: none;
-    text-transform: uppercase;
+    box-shadow: 0 7px 17px rgb(0 0 0 / 62%);
     font-size: 1rem;
-    line-height: 3.125em;
-    font-weight: bold;
-    color: #000;
-    transition: color 0.3s;
-    transition-delay: 0.1s;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
     text-align: center;
+    margin: 0;
+    /*color: #000;*/
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    color: #000;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
   }
   .cs-button-solid:hover {
     color: #fff;
@@ -91,16 +96,17 @@
     width: 100%;
   }
   .cs-button-solid:before {
-    z-index: -1;
+    content: '';
     position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #0030e7;
+    box-shadow: 0 7px 17px rgb(144, 177, 255);
+    opacity: 1;
     top: 0;
     left: 0;
-    content: "";
-    opacity: 1;
-    display: block;
-    background-color: #000;
-    height: 100%;
-    width: 0;
+    z-index: -1;
+    border-radius: 15px;
     transition: width 0.3s;
   }
   .cs-hide-on-mobile {
@@ -544,15 +550,17 @@
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
-    color: var(--headerColor);
+    color: #000000;
     display: inline-block;
     position: relative;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: #000b42;
+    font-weight: bold;
+    text-decoration: underline;
   }
   #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
+    color: #001cb2;
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -651,7 +659,7 @@
   #cs-navigation .cs-li-link.cs-drop-link {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 2vw, 1.25rem);
-    color: #fff;
+    color: #000;
   }
 }
 /* Desktop - 1024px */
@@ -1215,7 +1223,7 @@
 @media only screen and (min-width: 0rem) {
   #footer {
     background: #1c1c1c;
-    padding: 5.25rem 0 calc(20 / 16 * 1rem);
+    padding: 4rem 0 calc(20 / 16 * 1rem);
     font-size: min(4vw, 1.2em);
   }
   #footer .left-section {

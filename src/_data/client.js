@@ -4,11 +4,11 @@ module.exports = {
     "phoneForTel": "717-818-1625",
     "phoneFormatted": "(717) 818-1625",
     "address": {
-        "lineOne": "First Address Line",
-        "lineTwo": "Second Address Line",
+        "lineOne": "950 Walnut Bottom Rd",
+        "lineTwo": "Suite 15 #203",
         "city": "Carlisle",
         "state": "PA",
-        "zip": "80206",
+        "zip": "17015",
         "country": "US",
         "mapLink": "https://maps.app.goo.gl"
     },
