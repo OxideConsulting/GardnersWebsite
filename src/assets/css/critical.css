@@ -623,18 +623,15 @@
     z-index: -1;
   }
   #sbsr-1810 .cs-picture {
-    width: auto;
-    height: 40.1875em;
-    display: block;
-    position: absolute;
+    max-width: calc(100% - 2rem);
     left: 50%;
-    bottom: 0em;
     transform: translateX(-50%);
+    position: absolute;
   }
   #sbsr-1810 .cs-picture img {
     margin-top: 14em;
     width: auto;
-    height: 62%;
+    height: 23em;
     object-fit: contain;
   }
   #sbsr-1810 .cs-splatter {
@@ -693,6 +690,20 @@
     position: relative;
     z-index: 3;
   }
+  #sbsr-1810 .cs-picture {
+    max-width: calc(100% - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    position: static;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  #sbsr-1810 .cs-picture {
+    max-width: calc(100% - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    position: static;
+  }
 }
 /*-- -------------------------- -->
 <---        Side By Side        -->
@@ -724,6 +735,7 @@
     order: 2;
   }
   #sbs-1586 .cs-picture img {
+    box-shadow: 0 7px 17px rgb(0 0 0 / 62%);
     border-radius: 15px;
     position: absolute;
     top: 0;
@@ -934,6 +946,7 @@
     /* Prevents overflow from the image going off screen */
     overflow: hidden;
   }
+
   #gallery-1374 .cs-container {
     width: 100%;
     max-width: 80rem;
@@ -944,6 +957,7 @@
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
+
   #gallery-1374 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
@@ -957,6 +971,7 @@
   #gallery-1374 .cs-topper {
     color: #c6c6c6;
   }
+
   #gallery-1374 .cs-image-group {
     width: 100%;
     margin: 0;
@@ -967,6 +982,7 @@
     /* 16px - 60px */
     gap: clamp(1rem, 4.3vw, 3.75rem);
   }
+
   #gallery-1374 .cs-link {
     text-decoration: none;
     height: 100%;
@@ -974,6 +990,7 @@
     flex-direction: column;
     gap: 1rem;
   }
+
   #gallery-1374 .cs-item {
     list-style: none;
     width: 100%;
@@ -981,19 +998,24 @@
     margin: 0;
     grid-column: span 12;
   }
+
   #gallery-1374 .cs-item:hover .cs-h3,
   #gallery-1374 .cs-item:hover .cs-desc {
     color: #fff;
   }
+
   #gallery-1374 .cs-item:hover .cs-item-text {
     background-color: #000b42;
   }
+
   #gallery-1374 .cs-item:hover .cs-icon-wrapper {
     border-color: #fff;
   }
+
   #gallery-1374 .cs-item:hover .cs-icon {
     filter: brightness(1000%) grayscale(1);
   }
+
   #gallery-1374 .cs-picture {
     width: 100%;
     /* 344px - 420px */
@@ -1003,7 +1025,9 @@
     display: block;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 7px 17px rgb(0 0 0 / 62%);
   }
+
   #gallery-1374 .cs-picture img {
     width: 100%;
     height: 100%;
@@ -1012,6 +1036,7 @@
     top: 0;
     left: 0;
   }
+
   #gallery-1374 .cs-item-text {
     /* 16px - 20px top & bottom, 16px - 40px left & right */
     padding: clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2.8vw, 2.5rem);
@@ -1024,12 +1049,15 @@
     flex-grow: 1;
     gap: 1rem;
     transition: background-color 0.3s;
+    box-shadow: 0 7px 17px rgb(0 0 0 / 62%);
   }
+
   #gallery-1374 .cs-flex {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
+
   #gallery-1374 .cs-h3 {
     /* 20px - 25px */
     font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
@@ -1039,6 +1067,7 @@
     color: #1a1a1a;
     transition: color 0.3s;
   }
+
   #gallery-1374 .cs-desc {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.2vw, 1rem);
@@ -1046,6 +1075,7 @@
     color: #1a1a1a;
     transition: color 0.3s;
   }
+
   #gallery-1374 .cs-icon-wrapper {
     width: 3rem;
     height: 3rem;
@@ -1058,11 +1088,13 @@
     flex-shrink: 0;
     transition: border-color 0.3s;
   }
+
   #gallery-1374 .cs-icon {
     width: auto;
     height: 0.75rem;
     transition: filter 0.3s;
   }
+
   #gallery-1374 .cs-button-solid {
     font-size: 1rem;
     font-weight: 700;
@@ -1083,6 +1115,7 @@
     position: relative;
     z-index: 1;
   }
+
   #gallery-1374 .cs-button-solid:before {
     content: "";
     width: 0%;
@@ -1096,30 +1129,32 @@
     z-index: -1;
     transition: width 0.3s;
   }
+
   #gallery-1374 .cs-button-solid:hover:before {
     width: 100%;
   }
-/* In Between - 600px */
-@media only screen and (min-width: 37.5rem) {
-  #gallery-1374 .cs-item {
-    grid-column: span 6;
+
+  /* In Between - 600px */
+  @media only screen and (min-width: 37.5rem) {
+    #gallery-1374 .cs-item {
+      grid-column: span 6;
+    }
   }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #gallery-1374 .cs-title,
-  body.dark-mode #gallery-1374 .cs-text,
-  body.dark-mode #gallery-1374 .cs-h3 {
-    color: var(--bodyTextColorWhite);
+  /* Dark Mode */
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode #gallery-1374 .cs-title,
+    body.dark-mode #gallery-1374 .cs-text,
+    body.dark-mode #gallery-1374 .cs-h3 {
+      color: var(--bodyTextColorWhite);
+    }
+
+    body.dark-mode #gallery-1374 .cs-text {
+      opacity: 0.8;
+    }
   }
-  body.dark-mode #gallery-1374 .cs-text {
-    opacity: 0.8;
-  }
-}
   /*-- -------------------------- -->
   <---          Timeline          -->
   <--- -------------------------- -*/
-
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
     #timeline-971 {
@@ -1129,6 +1164,7 @@
       /* clips the white line through the bullets */
       overflow: hidden;
     }
+
     #timeline-971 .cs-container {
       width: 100%;
       /* changes to 1440px at tablet */
@@ -1140,6 +1176,7 @@
       /* 48px - 64px */
       gap: clamp(3rem, 6vw, 4rem);
     }
+
     #timeline-971 .cs-content {
       /* set text align to left if content needs to be left aligned */
       text-align: center;
@@ -1153,6 +1190,7 @@
     #timeline-971 .cs-title {
       max-width: 18ch;
     }
+
     #timeline-971 .cs-card-group {
       width: 100%;
       margin: 0;
@@ -1165,6 +1203,7 @@
       gap: clamp(2.5rem, 6vw, 5rem);
       position: relative;
     }
+
     #timeline-971 .cs-card-group:before {
       /* white line through the bullets */
       content: "";
@@ -1178,6 +1217,7 @@
       /* half the width of the bullet */
       left: 0.375rem;
     }
+
     #timeline-971 .cs-item {
       width: 100%;
       max-width: 25rem;
@@ -1187,12 +1227,14 @@
       box-sizing: border-box;
       position: relative;
     }
+
     #timeline-971 .cs-icon {
       width: 3.75rem;
       height: auto;
       /* 32px - 40px */
       margin: 0 0 clamp(2rem, 3vw, 2.5rem);
     }
+
     #timeline-971 .cs-h3 {
       /* 20px - 25px */
       font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
@@ -1204,6 +1246,7 @@
       color: var(--headerColor);
       position: relative;
     }
+
     #timeline-971 .cs-item-text {
       /* 14px - 16px */
       font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -1217,9 +1260,11 @@
     #timeline-971 .cs-container {
       max-width: 90rem;
     }
+
     #timeline-971 .cs-card-group {
       flex-direction: row;
     }
+
     #timeline-971 .cs-card-group:before {
       width: 100%;
       height: 1px;
@@ -1229,14 +1274,17 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     #timeline-971 .cs-item {
       padding: 0 0 4.125rem 0;
       z-index: 1;
     }
+
     #timeline-971 .cs-item::before {
       top: auto;
       bottom: 0rem;
     }
+
     #timeline-971 .cs-h3 {
       width: 100%;
     }
@@ -1246,15 +1294,18 @@
     body.dark-mode #timeline-971 {
       background-color: rgba(0, 0, 0, 0.2);
     }
+
     body.dark-mode #timeline-971 .cs-title,
     body.dark-mode #timeline-971 .cs-text,
     body.dark-mode #timeline-971 .cs-h3,
     body.dark-mode #timeline-971 .cs-item-text {
       color: var(--bodyTextColorWhite);
     }
+
     body.dark-mode #timeline-971 .cs-card-group::before {
       opacity: 0.3;
     }
+
     body.dark-mode #timeline-971 .cs-text,
     body.dark-mode #timeline-971 .cs-item-text {
       opacity: 0.8;
@@ -1263,12 +1314,12 @@
   /*-- -------------------------- -->
   <---          Pricing           -->
   <--- -------------------------- -*/
-
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
     #pricing-861 {
       padding: var(--sectionPadding);
     }
+
     #pricing-861 .cs-container {
       width: 100%;
       /* changes to 1280px at tablet */
@@ -1281,6 +1332,7 @@
       gap: clamp(3rem, 6vw, 4rem);
       position: relative;
     }
+
     #pricing-861 .cs-content {
       /* set text align to left if content needs to be left aligned */
       text-align: center;
@@ -1294,9 +1346,11 @@
     #pricing-861 .cs-title {
       max-width: 25ch;
     }
+
     #pricing-861 .cs-text {
       max-width: 56.25rem;
     }
+
     #pricing-861 .cs-card-group {
       width: 100%;
       margin: 0;
@@ -1306,6 +1360,7 @@
       /* 16px - 20px */
       gap: clamp(1rem, 1.8vw, 1.25rem);
     }
+
     #pricing-861 .cs-item {
       list-style: none;
       width: 100%;
@@ -1325,22 +1380,32 @@
       align-items: stretch;
       grid-column: span 12;
     }
+
+    #pricing-861 .cs-item.cs-popular {
+      border: 3px solid #FFD700;
+    }
+
     #pricing-861 .cs-item.cs-popular .cs-background {
       background-color: #000000;
     }
+
     #pricing-861 .cs-item .cs-background img {
       opacity: 1;
     }
+
     #pricing-861 .cs-item.cs-popular .cs-package {
       color: #FFD700;
     }
+
     #pricing-861 .cs-item.cs-popular .cs-price,
     #pricing-861 .cs-item.cs-popular .cs-desc {
       color: var(--bodyTextColorWhite);
     }
+
     #pricing-861 .cs-item.cs-popular .cs-desc {
       opacity: 0.8;
     }
+
     #pricing-861 .cs-top {
       padding: 2.5rem 0;
       /* prevents padding and border from affecting height and width */
@@ -1352,6 +1417,7 @@
       position: relative;
       z-index: 1;
     }
+
     #pricing-861 .cs-background {
       background-color: #000b2b;
       position: absolute;
@@ -1362,6 +1428,7 @@
       right: -2rem;
       z-index: -1;
     }
+
     #pricing-861 .cs-background img {
       width: 100%;
       height: 100%;
@@ -1369,6 +1436,7 @@
       object-fit: cover;
       opacity: 0;
     }
+
     #pricing-861 .cs-package {
       font-size: 1rem;
       line-height: 1.2em;
@@ -1381,6 +1449,7 @@
       color: #dadada;
       display: block;
     }
+
     #pricing-861 .cs-price {
       /* 39px - 49px */
       font-size: clamp(2.4375rem, 5vw, 3.0625rem);
@@ -1393,6 +1462,7 @@
       /* so it's even with the bottom of the cs-desc */
       transform: translateY(0.5625rem);
     }
+
     #pricing-861 .cs-desc {
       font-size: 1rem;
       line-height: 1.2em;
@@ -1402,6 +1472,7 @@
       opacity: 0.8;
       display: block;
     }
+
     #pricing-861 .cs-ul {
       /* 24px - 40px */
       margin: clamp(1.5rem, 4vw, 2.5rem) 0 2rem 0;
@@ -1412,6 +1483,7 @@
       align-items: flex-start;
       gap: 0.75rem;
     }
+
     #pricing-861 .cs-li {
       /* 14px - 16px */
       font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -1427,15 +1499,18 @@
       align-items: flex-start;
       gap: 1rem;
     }
+
     #pricing-861 .cs-li.cs-disabled {
       opacity: 0.4;
       filter: grayscale(1);
     }
+
     #pricing-861 .cs-icon {
       width: 1.125rem;
       height: auto;
       display: block;
     }
+
     #pricing-861 .cs-button-solid {
       font-size: 1rem;
       /* 46px - 56px */
@@ -1455,6 +1530,7 @@
       /* prevents padding from adding to the width */
       box-sizing: border-box;
     }
+
     #pricing-861 .cs-button-solid:before {
       content: "";
       position: absolute;
@@ -1468,15 +1544,18 @@
       border-radius: 0.25rem;
       transition: width 0.3s;
     }
+
     #pricing-861 .cs-button-solid:hover:before {
       width: 100%;
     }
+
     #pricing-861 .cs-price-button {
       /* pushes up against the cs-ul so if there's loess li's in the list, the button always pushes itself to the bottom */
       margin-top: auto;
       width: 100%;
       border-radius: 10px;
     }
+
     #pricing-861 .cs-price-button:before {
       border-radius: 10px;
     }
@@ -1486,9 +1565,11 @@
     #pricing-861 .cs-container {
       max-width: 80rem;
     }
+
     #pricing-861 .cs-item {
       grid-column: span 6;
     }
+
     #pricing-861 .cs-item.cs-popular {
       grid-column: span 12;
       order: -1;
@@ -1499,6 +1580,7 @@
     #pricing-861 .cs-item {
       grid-column: span 4;
     }
+
     #pricing-861 .cs-item.cs-popular {
       grid-column: span 4;
       order: initial;
@@ -1509,9 +1591,11 @@
     body.dark-mode #pricing-861 {
       background-color: var(--dark);
     }
+
     body.dark-mode #pricing-861 .cs-topper {
       color: var(--primaryLight);
     }
+
     body.dark-mode #pricing-861 .cs-title,
     body.dark-mode #pricing-861 .cs-text,
     body.dark-mode #pricing-861 .cs-item-p,
@@ -1522,32 +1606,39 @@
     body.dark-mode #pricing-861 .cs-plan {
       color: var(--bodyTextColorWhite);
     }
+
     body.dark-mode #pricing-861 .cs-text {
       opacity: 0.8;
     }
+
     body.dark-mode #pricing-861 .cs-item {
       background-color: var(--medium);
     }
+
     body.dark-mode #pricing-861 .cs-item.cs-popular {
       background-color: var(--primary);
     }
+
     body.dark-mode #pricing-861 .cs-background {
       background-color: rgba(0, 0, 0, 0.2);
     }
+
     body.dark-mode #pricing-861 .cs-icon {
       /* makes icon white (if it wasn't black to start) */
       filter: grayscale(1) brightness(1000%);
     }
+
     body.dark-mode #pricing-861 .cs-price-button {
       background-color: var(--bodyTextColorWhite);
       color: #1a1a1a;
       transition: color 0.3s;
     }
+
     body.dark-mode #pricing-861 .cs-price-button:hover {
       color: #fff;
     }
   }
-
+}
 
 
 

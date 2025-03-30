@@ -1,6 +1,6 @@
 module.exports = {
     "name": "Gardners Digital Solutions",
-    "email": "adam@oxideconsulting.com",
+    "email": "info@gardnersdigital.com",
     "phoneForTel": "717-818-1625",
     "phoneFormatted": "(717) 818-1625",
     "address": {

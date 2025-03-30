@@ -2,6 +2,9 @@
 /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
+#main {
+  background-color: #0000005c;
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   .blog-container {
@@ -315,7 +318,7 @@
     /* 46px - 56px */
     line-height: clamp(2.875em, 5.5vw, 3.5em);
     font-weight: 700;
-    color: #fff;
+    color: #000000;
     transition: color 0.3s;
     text-align: center;
   }
@@ -328,7 +331,7 @@
     opacity: 0;
     border: 1px solid var(--headerColor);
     border-radius: 0.25rem;
-    background: #fff;
+    background: #000000;
     height: 100%;
     width: 100%;
     box-sizing: border-box;

@@ -44,7 +44,64 @@
         <script defer src="/assets/js/nav.js"></script>
 
         
-    <link rel="stylesheet" href="/assets/css/reviews.css">
+    <link rel="stylesheet" href="/assets/css/pricing.css">
+<script defer>
+    if (window.netlifyIdentity) {
+        window
+            .netlifyIdentity
+            .on('init', (user) => {
+                if (!user) {
+                    window
+                        .netlifyIdentity
+                        .on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                }
+            });
+    }
+    var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+    // CShamburgerMenu.addEventListener('click', function() {
+    //     CShamburgerMenu.classList.toggle("cs-active");
+    //     CSnavbarMenu.classList.toggle("cs-active");
+    //     CSbody.classList.toggle("cs-open");
+    //     // run the function to check the aria-expanded value
+    //     ariaExpanded();
+    // });
+
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = document.documentElement.scrollTop;
+        if(scroll >= 100){
+            document.querySelector('body').classList.add('scroll')
+        } else {
+            document.querySelector('body').classList.remove('scroll')
+        }
+    });
+
+
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+    }
+</script>
 
 
         <title>Pricing | Gardners Digital Solutions</title>
@@ -162,11 +219,11 @@
                                 <ul class="cs-drop-ul" id="dropdown-Services">
                                     
                                         <li class="cs-drop-li">
-                                            <a href="/service-one/" class="cs-li-link cs-drop-link">Service One</a>
+                                            <a href="/webdesign/" class="cs-li-link cs-drop-link">Web Design</a>
                                         </li>
                                     
                                         <li class="cs-drop-li">
-                                            <a href="/service-two/" class="cs-li-link cs-drop-link">SEO Services</a>
+                                            <a href="/SEO-services/" class="cs-li-link cs-drop-link">SEO Services</a>
                                         </li>
                                     
                                 </ul>
@@ -238,9 +295,56 @@
                             
                         </li>
                     
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+                            
+                        
+
+                        
+                        <li class="cs-li  cs-hide-on-desktop">
+
+                            
+                            
+                                
+                                <a href="/privacy-policy/" class="cs-li-link " >
+                                    
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+                            
+                        
+
+                        
+                        <li class="cs-li  cs-hide-on-desktop">
+
+                            
+                            
+                                
+                                <a href="/terms-of-use/" class="cs-li-link " >
+                                    
+                                </a>
+                            
+                        </li>
+                    
                 </ul>
             </div>
         </nav>
+        <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
         <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
 <!--        <button id="dark-mode-toggle" aria-label="dark mode toggle" tabindex="3">-->
 <!--            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>-->
@@ -251,113 +355,164 @@
         <main id="main">
             
 
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">Our Reviews</h1>
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
-        </picture>
-    </section>
+<!-- ============================================ -->
+<!--                   Pricing                    -->
+<!-- ============================================ -->
 
-    <!-- ============================================ -->
-    <!--                  Reviews                     -->
-    <!-- ============================================ -->
+<section id="pricing-861">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Simple & Transparent Pricing</h2>
+            <p class="cs-text">
+                We believe in clear, straightforward pricing with no hidden fees or surprises. Choose the package that best fits your needs, and let’s start building something great together.
+                Need something you don't see here? Give us a call and we'll be happy to help.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-top">
+                    <span class="cs-package">One-Time Payment</span>
+                    <span class="cs-price">$2500</span>
+                    <span class="cs-desc">(hosting $30/mo)</span>
+                    <picture class="cs-background">
+                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    </picture>
+                </div>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        Design and Development
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        5 Custom and Responsive Pages <br>(One-Time $100/page for more)
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        $30/mo Hosting
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        $50/mo Unlimited Edits and Support <br>Add-On
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        One-Time $200 Blog Add-On
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li cs-disabled">
+                        Lifetime Updates
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/no.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                </ul>
+                <a href="" class="cs-button-solid cs-price-button">Get Started</a>
+            </li>
+            <li class="cs-item cs-popular">
+                <div class="cs-top">
+                    <span class="cs-package">Web Presence Package</span>
+                    <span class="cs-price">$150</span>
+                    <span class="cs-desc">Per Month</span>
+                    <picture class="cs-background">
+                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    </picture>
+                </div>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        Design and Development
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Hosting Included
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        5 Custom and Responsive Pages <br>(One-Time $100/page for more)
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Unlimited Edits
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        One-Time $200 Blog Add-On
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        24/7 Support
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Lifetime Updates
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                </ul>
+                <a href="" class="cs-button-solid cs-price-button">Get Started</a>
+            </li>
+            <li class="cs-item">
+                <div class="cs-top">
+                    <span class="cs-package">Ecommerce/Online Store</span>
+                    <span class="cs-price">$6k</span>
+                    <span class="cs-desc">Starting</span>
+                    <picture class="cs-background">
+                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    </picture>
+                </div>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        Custom Shopify Store
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Integrated Shipping
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Configure Apps
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Fully Compatible with Shopify CMS
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li">
+                        Shopify Tutorial and Documentation
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                    <li class="cs-li cs-disabled">
+                        24/7 Support
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/no.svg" alt="checkmark" width="18" height="18">
+                    </li>
+                </ul>
+                <a href="" class="cs-button-solid cs-price-button">Get Started</a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
 
-    <section id="reviews">
-        <div class="container">
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
-                </p>
-                <div class="star-group">
-                    <span class="name">B Miller<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
+<section id="content-1638">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">Discounts for Nonprofits and Other Qualifying Organizations</h2>
             </div>
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
+            <div class="cs-flex">
+                <h3 class="cs-h3">
+                    Empowering Communities Through Exclusive Offers
+                </h3>
+                <p class="cs-text">
+                    At Gardners Digital Solutions, we are committed to giving back. We proudly offer special discounts for nonprofits, educational institutions, veterans, first responders, and qualifying startups. Contact us to discover how we can support your mission and enhance your digital presence.
                 </p>
-                <div class="star-group">
-                    <span class="name">Vincent M.<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
-            </div>
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
-                </p>
-                <div class="star-group">
-                    <span class="name">Alex L.<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
-            </div>
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile-woman.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
-                </p>
-                <div class="star-group">
-                    <span class="name">Arrieana M.<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
-            </div>
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
-                </p>
-                <div class="star-group">
-                    <span class="name">Leo N.<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
-            </div>
-            <div class="review">
-                <picture>
-                    <img class="profile" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="" width="99" height="99">
-                </picture>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed recusandae rerum unde similique ratione sapiente necessitatibus natus mollitia nam iusto.
-                </p>
-                <div class="star-group">
-                    <span class="name">Brian A.<span class="desc">Homeowner</span></span>
-                    <picture>
-                        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="91" height="15">
-                    </picture>
-                </div>
+                <a href="" class="cs-button-solid cs-price-button">Learn More</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================ -->
+
+<!-- ============================================ -->
 <!--             Final Call to Action             -->
 <!-- ============================================ -->
 
@@ -423,10 +578,10 @@
                         <h2>Info</h2>
                     </li>
                     <li>
-                        <a href="/privacy">About Us</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="/terms">Terms of Use</a>
+                        <a href="/terms-of-use">Terms of Use</a>
                     </li>
                 </ul>
                 <ul>
@@ -444,12 +599,11 @@
                     </li>
                     <li>
                         <a href="tel:717-818-1625">
-                            T:
                             (717) 818-1625
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:adam@oxideconsulting.com">Click to Email</a>
+                        <a href="mailto:info@gardnersdigital.com">info@gardnersdigital.com</a>
                     </li>
                 </ul>
             </div>

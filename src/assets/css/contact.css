@@ -1,4 +1,7 @@
 /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
+#int-hero:before{
+  background: transparent !important;
+}
 /*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/
@@ -201,8 +204,18 @@
     max-width: 80rem;
     gap: 5rem;
   }
+  #cs-contact .cs-container-priv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 88rem;
+    gap: 5rem;
+  }
   #cs-contact #cs-form {
     max-width: 39.375rem;
+  }
+  #cs-contact #cs-form-priv {
+    max-width: 45rem;
   }
   #cs-contact #cs-form label {
     width: 100%;

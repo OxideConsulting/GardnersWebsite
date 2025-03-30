@@ -2,7 +2,7 @@
 title: 'SEO Services | Gardners Digital Solutions'
 description: 'Meta description for the page'
 preloadImg: '/assets/images/cabinets2.jpg'
-permalink: 'service-two/'
+permalink: 'SEO-services/'
 eleventyNavigation:
     key: SEO Services
     order: 3200
@@ -13,92 +13,151 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/services.css">
+<script defer>
+    if (window.netlifyIdentity) {
+        window
+            .netlifyIdentity
+            .on('init', (user) => {
+                if (!user) {
+                    window
+                        .netlifyIdentity
+                        .on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                }
+            });
+    }
+    var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+    // CShamburgerMenu.addEventListener('click', function() {
+    //     CShamburgerMenu.classList.toggle("cs-active");
+    //     CSnavbarMenu.classList.toggle("cs-active");
+    //     CSbody.classList.toggle("cs-open");
+    //     // run the function to check the aria-expanded value
+    //     ariaExpanded();
+    // });
+
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = document.documentElement.scrollTop;
+        if(scroll >= 100){
+            document.querySelector('body').classList.add('scroll')
+        } else {
+            document.querySelector('body').classList.remove('scroll')
+        }
+    });
+
+
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+    }
+</script>
 {% endblock %}
 
 {% block body %}
 
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">service Two Gallery</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
+<section id="int-hero">
+    <h1 id="home-h">SEO Services</h1>
+</section>
 
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
 
-    <section id="gallery">
-        <div class="cs-container">
-            <div class="cs-image-group">
-                <!-- Row 1-->
-                <div class="cs-row cs-row-1">
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
-                    </picture>
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
+<section id="sbs-1362">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <picture class="cs-background">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" src="/assets/images/pa2.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" src="/assets/images/pa2.png">
+                <img loading="lazy" decoding="async" src="/assets/images/pa2.png" alt="people" width="605" height="690">
+            </picture>
+            <div class="cs-box">
+                <span class="cs-desc">
+                   More visibility,<br> more traffic,<br> more customers.
+                </span>
             </div>
-            <a href="/contact" class="cs-button-solid">Get Free Quote</a>
         </div>
-    </section>
+        <div class="cs-content">
+            <h2 class="cs-title">Drive Your Online Visibility with Authentic SEO</h2>
+            <p class="cs-text">
+                At Gardners Digital Solutions, we design websites that are naturally optimized for search engines.
+                We follow best practices—focusing on fast load times, clean code, and genuine content—to help your business rank higher without resorting to gimmicks or keyword stuffing.
+            </p>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/seo2.svg" alt="icon" width="32" height="32">
+                        SEO-Optimized Design
+                    </h3>
+                    <p class="cs-item-text">
+                        Every website we build is crafted with SEO in mind. Our hand-coded sites feature a solid structure and clean code that search engines love, ensuring your online presence is both user-friendly and easy to find.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <h3 class="cs-h3">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/content.svg" alt="icon" width="32" height="32">
+                        Authentic Content & Performance
+                    </h3>
+                    <p class="cs-item-text">
+                        We prioritize natural, high-quality content and a seamless user experience. By combining effective design with industry-standard SEO practices, we help boost your organic visibility and drive more local traffic to your site.
+                    </p>
+                </li>
+            </ul>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="24" height="24">
+                    SEO best practices built into every design
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="24" height="24">
+                    Authentic, engaging content that resonates
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="24" height="24">
+                    High performance with top PageSpeed scores
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="24" height="24">
+                    Optimized for local search and organic growth
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/check.svg" alt="checkmark" width="24" height="24">
+                    No gimmicks, just practical results
+                </li>
+            </ul>
+            <h3 class="cs-h3" style="color: #fff; margin-bottom: 20px;">
+                Ready to get the results you've been looking for?
+            </h3>
+            <a href="" class="cs-button-solid">Get started</a>
+        </div>
+    </div>
+    <div class="cs-bubbles" aria-hidden="true"></div>
+</section>
 
     {% include 'components/cta.html' %}
 

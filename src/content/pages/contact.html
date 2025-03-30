@@ -13,6 +13,63 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+<script defer>
+    if (window.netlifyIdentity) {
+        window
+            .netlifyIdentity
+            .on('init', (user) => {
+                if (!user) {
+                    window
+                        .netlifyIdentity
+                        .on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                }
+            });
+    }
+    var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+    // CShamburgerMenu.addEventListener('click', function() {
+    //     CShamburgerMenu.classList.toggle("cs-active");
+    //     CSnavbarMenu.classList.toggle("cs-active");
+    //     CSbody.classList.toggle("cs-open");
+    //     // run the function to check the aria-expanded value
+    //     ariaExpanded();
+    // });
+
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = document.documentElement.scrollTop;
+        if(scroll >= 100){
+            document.querySelector('body').classList.add('scroll')
+        } else {
+            document.querySelector('body').classList.remove('scroll')
+        }
+    });
+
+
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+    }
+</script>
 {% endblock %}
 
 {% block body %}
@@ -23,11 +80,7 @@ eleventyNavigation:
 
     <section id="int-hero">
         <h1 id="home-h">Contact Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
+
     </section>
 
     <!-- ============================================ -->
@@ -38,10 +91,10 @@ eleventyNavigation:
         <div class="cs-container">
             <form id="cs-form" name="Contact Form" method="post">
                 <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
+                    <span class="cs-topper"></span>
                     <h2 class="cs-title">Get in Touch</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
+                        Email us your ideas and everything else you're looking for in a new site-we'll get back to you within 24 hours. You can also call us directly 24/7; if we’re not immediately free, we’ll return your call same-day.
                     </p>
                 </div>
                 <label>
@@ -57,8 +110,8 @@ eleventyNavigation:
                     <input required type="text" id="phone" name="phone" placeholder="Phone">
                 </label>
                 <label>
-                    How Did You Find Us
-                    <input type="text" id="find" name="find-us" placeholder="How did you find us?">
+                    Did Anyone Refer You?
+                    <input type="text" id="find" name="find-us" placeholder="Your Referrer's Name Here">
                 </label>
                 <label class="cs-label-message">
                     Message
@@ -89,8 +142,8 @@ eleventyNavigation:
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="/assets/images/skyscraper.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/skyscraper.jpg" alt="building" loading="lazy" width="2500" height="1667">
+                    <source media="(min-width: 601px)" srcset="/assets/images/pa3.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/pa3.jpg" alt="building" loading="lazy" width="2500" height="1667">
                 </picture>
 
             </div>

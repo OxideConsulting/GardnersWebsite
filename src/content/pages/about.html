@@ -12,6 +12,63 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/about.css">
+<script defer>
+    if (window.netlifyIdentity) {
+        window
+            .netlifyIdentity
+            .on('init', (user) => {
+                if (!user) {
+                    window
+                        .netlifyIdentity
+                        .on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                }
+            });
+    }
+    var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+    // CShamburgerMenu.addEventListener('click', function() {
+    //     CShamburgerMenu.classList.toggle("cs-active");
+    //     CSnavbarMenu.classList.toggle("cs-active");
+    //     CSbody.classList.toggle("cs-open");
+    //     // run the function to check the aria-expanded value
+    //     ariaExpanded();
+    // });
+
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = document.documentElement.scrollTop;
+        if(scroll >= 100){
+            document.querySelector('body').classList.add('scroll')
+        } else {
+            document.querySelector('body').classList.remove('scroll')
+        }
+    });
+
+
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+    }
+</script>
 {% endblock %}
 
 {% block body %}
@@ -21,11 +78,6 @@ eleventyNavigation:
 
     <section id="int-hero">
         <h1 id="home-h">About Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
 
     </section>
 
@@ -38,39 +90,77 @@ eleventyNavigation:
             <!-- Left Image Section -->
             <div class="cs-left">
                 <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                    <source media="(max-width: 600px)" srcset="/assets/images/orchard.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/images/orchard.webp">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/orchard.webp" alt="cabinets" loading="lazy" width="400" height="563">
                 </picture>
                 <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+                    <source media="(max-width: 600px)" src="/assets/images/aboutus.png">
+                    <source media="(min-width: 601px)" src="/assets/images/aboutus.png">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/aboutus.png" alt="house" loading="lazy" width="400" height="563">
                 </picture>
             </div>
             <!-- Right Content Section-->
             <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
+                <span class="cs-topper">Gardners Digital Solutions</span>
+                <h2 class="cs-title">Building Digital Success</h2>
                 <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                    Gardners Digital Solutions was founded to empower small businesses with the online presence they deserve.
+                    Frustrated by overpriced, poorly designed websites, I knew there was a better way. Our mission is to deliver
+                    genuine online representation that gives small organizations a competitive edge in today’s digital market.
                 </p>
                 <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                    With rising costs affecting every service, we saw an opportunity to offer true value. While many marketing companies provide slow, outdated, and ineffective websites or
+                    lure clients with low upfront prices only to underdeliver, we focus on quality from the very first conversation.
                 </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
+                <p class="cs-text">
+                    That commitment led to our $0 down, $149 per month Web Presence Package—a comprehensive solution designed to provide fellow small businesses
+                    with a high-quality, custom online presence that stands the test of time. Our promise: no gimmicks, no shortcuts, just real value.
+                </p>
+                <a href="/projects" class="cs-button-solid">Give us a call</a>
             </div>
         </div>
     </section>
+<!-- ============================================ -->
+<!--                 Why Choose                   -->
+<!-- ============================================ -->
 
-    {% include 'components/cta.html' %}
+<section id="why-choose-505">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">Why choose us?</h2>
+            </div>
+            <p class="cs-text">
+                We take the time to understand your unique business and tailor our process to what makes you special.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/design.svg" loading="lazy" decoding="async" alt="icon" width="70" height="70">
+                <h3 class="cs-h3">Custom Code, Every Time</h3>
+                <p class="cs-item-text">
+                    We don't use bloated website building applications; all of our work is made from scratch. This approach ensures your website is faster, more secure, and more reliable. Every line of code is thoughtfully written to meet your unique needs.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/cooperation.svg" loading="lazy" decoding="async" alt="icon" width="70" height="70">
+                <h3 class="cs-h3">Exceptional Customer Service</h3>
+                <p class="cs-item-text">
+                    We say it a lot because it means a lot—the customer experience is always our first priority. When you need help, the person who designed your solution answers your call. No automated systems, just personalized, dedicated support.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/choices.svg" loading="lazy" decoding="async" alt="icon" width="70" height="70">
+                <h3 class="cs-h3">Limitless Design Possibilities</h3>
+                <p class="cs-item-text">
+                    When we design a site, we provide options tailored to your tastes and are always happy to make adjustments as necessary. Everything is customizable to ensure your complete satisfaction.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% include 'components/cta.html' %}
 
 {% endblock %}

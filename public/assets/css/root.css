@@ -751,13 +751,13 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0.75rem;
-    color: var(--headerColor);
+    color: #000000;
     display: block;
     transition: color 0.3s, background-color 0.3s;
   }
   #cs-navigation .cs-li-link.cs-drop-link:hover {
-    color: var(--bodyTextColorWhite);
-    background-color: var(--primary);
+    color: #0057d9;
+    background-color: #d5d5d5;
   }
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
@@ -769,7 +769,7 @@
     background-color: var(--dark);
   }
   body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
-    color: var(--bodyTextColorWhite);
+    color: #001ebb;
   }
 }
 /*-- -------------------------- -->
@@ -949,10 +949,10 @@
     font-size: 1rem;
     font-weight: 700;
     /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    line-height: clamp(2.875em, 5.5vw, 2.5em);
     text-align: center;
     text-decoration: none;
-    min-width: 9.375rem;
+    min-width: 8.375rem;
     margin: 0;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
@@ -1026,8 +1026,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 30vh;
-    padding-top: 3.125rem;
+    min-height: 5vh;
+    padding-top: 7.125rem;
   }
   #int-hero picture {
     z-index: -2;

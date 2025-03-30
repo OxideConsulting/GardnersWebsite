@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://www.gardnersdigital.com/blog/">
 
         <!--Social Media Display-->
-        <meta property="og:title" content="Blog | Code Stitch Web Designs"/>
+        <meta property="og:title" content="Blog | Gardners Digital Solutions"/>
         <meta property="og:description" content="Meta description for the page"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://www.gardnersdigital.com/blog/"/>
@@ -45,9 +45,66 @@
 
         
     <link rel="stylesheet" href="/assets/css/blog.css">
+<script defer>
+    if (window.netlifyIdentity) {
+        window
+            .netlifyIdentity
+            .on('init', (user) => {
+                if (!user) {
+                    window
+                        .netlifyIdentity
+                        .on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                }
+            });
+    }
+    var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+
+    // CShamburgerMenu.addEventListener('click', function() {
+    //     CShamburgerMenu.classList.toggle("cs-active");
+    //     CSnavbarMenu.classList.toggle("cs-active");
+    //     CSbody.classList.toggle("cs-open");
+    //     // run the function to check the aria-expanded value
+    //     ariaExpanded();
+    // });
+
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = document.documentElement.scrollTop;
+        if(scroll >= 100){
+            document.querySelector('body').classList.add('scroll')
+        } else {
+            document.querySelector('body').classList.remove('scroll')
+        }
+    });
 
 
-        <title>Blog | Code Stitch Web Designs</title>
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+    }
+</script>
+
+
+        <title>Blog | Gardners Digital Solutions</title>
     </head>
     <body>
         <!--Screen reader skip main nav-->
@@ -162,11 +219,11 @@
                                 <ul class="cs-drop-ul" id="dropdown-Services">
                                     
                                         <li class="cs-drop-li">
-                                            <a href="/service-one/" class="cs-li-link cs-drop-link">Service One</a>
+                                            <a href="/webdesign/" class="cs-li-link cs-drop-link">Web Design</a>
                                         </li>
                                     
                                         <li class="cs-drop-li">
-                                            <a href="/service-two/" class="cs-li-link cs-drop-link">SEO Services</a>
+                                            <a href="/SEO-services/" class="cs-li-link cs-drop-link">SEO Services</a>
                                         </li>
                                     
                                 </ul>
@@ -238,9 +295,56 @@
                             
                         </li>
                     
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+                            
+                        
+
+                        
+                        <li class="cs-li  cs-hide-on-desktop">
+
+                            
+                            
+                                
+                                <a href="/privacy-policy/" class="cs-li-link " >
+                                    
+                                </a>
+                            
+                        </li>
+                    
+
+                        
+                        
+
+                        
+                        
+                        
+                        
+                            
+                        
+
+                        
+                        <li class="cs-li  cs-hide-on-desktop">
+
+                            
+                            
+                                
+                                <a href="/terms-of-use/" class="cs-li-link " >
+                                    
+                                </a>
+                            
+                        </li>
+                    
                 </ul>
             </div>
         </nav>
+        <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
         <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
 <!--        <button id="dark-mode-toggle" aria-label="dark mode toggle" tabindex="3">-->
 <!--            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>-->
@@ -257,9 +361,9 @@
     <section id="int-hero">
         <h1 id="home-h">Blog</h1>
         <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+            <source media="(max-width: 600px)" srcset="/assets/images/pa1.png">
+            <source media="(min-width: 601px)" srcset="/assets/images/pa1.png">
+            <img aria-hidden="true" decoding="async" src="/assets/images/pa1.png" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
         </picture>
     </section>
 
@@ -278,8 +382,8 @@
                         <!--Main Article Image-->
                         <picture class="blog-mainImage">
                             <img
-                            src="/assets/images/blog/landing.jpg"
-                            alt="A side-by-side comparison of tab and space indentation in a text editor"
+                            src="/assets/images/blog/mac-black-room.webp"
+                            alt="Laptop with a glowing screen in the dark"
                             width="795"
                             height="400"
                             decoding="async"/>
@@ -296,25 +400,25 @@
                                     height="32"
                                     decoding="async"/>
                                 </picture>
-                                <span class="blog-author">Gardners Digital Solutions</span>
+                                <span class="blog-author">Gardners Digital</span>
                                 <span aria-hidden="true" class="blog-dot"></span>
                                 <!--Blog Date-->
-                                <span class="blog-date">Feb 11, 2025</span>
+                                <span class="blog-date">Mar 30, 2025</span>
                             </div>
                             <h2 class="blog-h1">
-                                The Great Debate - Tabs vs. Spaces
+                                WordPress vs Custom Developed Websites for Small Businesses
                             </h2>
                             <p class="blog-desc">
-                                A battle as old as programming itself—should you use tabs or spaces for indentation?
+                                Discover why small businesses in 2025 are turning to professionally hand coded websites for better visibility, security, and customer experience-delivering real business advantages over page builders.
                             </p>
-                            <a href="/blog/tabs-vs-spaces/" class="blog-link">Continue Reading</a>
+                            <a href="/blog/wordpress-vs-custom-small-business/" class="blog-link">Continue Reading</a>
                         </div>
                     </article><article class="recent-articles">
                         <!--Main Article Image-->
                         <picture class="blog-mainImage">
                             <img
-                            src="/assets/images/blog/landing.jpg"
-                            alt="Kitchen"
+                            src="/assets/images/blog/wordpress.jpg"
+                            alt="Unpatched vulnerabilities continue to pose serious threats to WordPress websites in 2025."
                             width="795"
                             height="400"
                             decoding="async"/>
@@ -331,53 +435,18 @@
                                     height="32"
                                     decoding="async"/>
                                 </picture>
-                                <span class="blog-author">Code Stitch</span>
+                                <span class="blog-author">Gardners Digital</span>
                                 <span aria-hidden="true" class="blog-dot"></span>
                                 <!--Blog Date-->
-                                <span class="blog-date">Jun 8, 2023</span>
+                                <span class="blog-date">Mar 28, 2025</span>
                             </div>
                             <h2 class="blog-h1">
-                                Canitiem Saxa
+                                Recent WordPress Vulnerabilities Expose Thousands of Websites to Critical Security Risks
                             </h2>
                             <p class="blog-desc">
-                                Lorem markdownum trabeati dicere deus.
+                                In 2024, several critical vulnerabilities affecting popular WordPress plugins and themes were actively found, exposing thousands of sites to serious security risks. Today, almost a year later, hackers are still using these to hijack sites.
                             </p>
-                            <a href="/blog/canitiem-saxa/" class="blog-link">Continue Reading</a>
-                        </div>
-                    </article><article class="recent-articles">
-                        <!--Main Article Image-->
-                        <picture class="blog-mainImage">
-                            <img
-                            src="/assets/images/blog/landing.jpg"
-                            alt="Kitchen"
-                            width="795"
-                            height="400"
-                            decoding="async"/>
-                        </picture>
-                        <!--Article Info-->
-                        <div class="article-group">
-                            <div class="blog-authorGroup">
-                                <!--Author Image-->
-                                <picture class="blog-author-img">
-                                    <img
-                                    src="/assets/svgs/profile.svg"
-                                    alt="house"
-                                    width="32"
-                                    height="32"
-                                    decoding="async"/>
-                                </picture>
-                                <span class="blog-author">Code Stitch</span>
-                                <span aria-hidden="true" class="blog-dot"></span>
-                                <!--Blog Date-->
-                                <span class="blog-date">Jun 8, 2023</span>
-                            </div>
-                            <h2 class="blog-h1">
-                                Sucos Creati
-                            </h2>
-                            <p class="blog-desc">
-                                Lorem markdownum Talia. Carinae equis.
-                            </p>
-                            <a href="/blog/sucos-creati/" class="blog-link">Continue Reading</a>
+                            <a href="/blog/wordpress-security-vulnerabilities-q1-2025/" class="blog-link">Continue Reading</a>
                         </div>
                     </article>
         </div>
@@ -389,20 +458,7 @@
 <div class="blog-sidebar">
     <!--Featured-->
     <div class="blog-featured-group">
-        <span class="blog-header">Featured Posts</span><a class="blog-feature" href="/blog/canitiem-saxa/">
-                <picture class="blog-featureImage">
-                    <img
-                        src="/assets/images/blog/landing.jpg" 
-                        alt="Kitchen"
-                        width="60"
-                        height="60"
-                        decoding="async">
-                </picture>
-                <div class="content-group">
-                    <h3 class="feature-h3">Canitiem Saxa</h3>
-                    <span class="feature-date">Jun 8, 2023</span>
-                </div>
-            </a></div>
+        <span class="blog-header">Featured Posts</span></div>
     <!--Add anything else in the sidebar below-->
 </div>
     </div>
@@ -450,10 +506,10 @@
                         <h2>Info</h2>
                     </li>
                     <li>
-                        <a href="/privacy">About Us</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="/terms">Terms of Use</a>
+                        <a href="/terms-of-use">Terms of Use</a>
                     </li>
                 </ul>
                 <ul>
@@ -471,12 +527,11 @@
                     </li>
                     <li>
                         <a href="tel:717-818-1625">
-                            T:
                             (717) 818-1625
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:adam@oxideconsulting.com">Click to Email</a>
+                        <a href="mailto:info@gardnersdigital.com">info@gardnersdigital.com</a>
                     </li>
                 </ul>
             </div>
