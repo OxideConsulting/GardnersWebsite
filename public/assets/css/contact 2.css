@@ -1,4 +1,7 @@
 /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
+#int-hero:before{
+  background: transparent !important;
+}
 /*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/

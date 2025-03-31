@@ -756,8 +756,8 @@
     transition: color 0.3s, background-color 0.3s;
   }
   #cs-navigation .cs-li-link.cs-drop-link:hover {
-    color: var(--bodyTextColorWhite);
-    background-color: var(--primary);
+    color: #0057d9;
+    background-color: #d5d5d5;
   }
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
@@ -769,7 +769,7 @@
     background-color: var(--dark);
   }
   body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
-    color: var(--bodyTextColorWhite);
+    color: #001ebb;
   }
 }
 /*-- -------------------------- -->
