@@ -38,6 +38,7 @@
     background-color: transparent;
   }
   .cs-topper {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
     display: block;
     margin-bottom: 0.25rem;
     text-transform: uppercase;
@@ -45,7 +46,7 @@
     font-size: var(--topperFontSize);
     line-height: 1.2em;
     font-weight: 700;
-    color: #c6c6c6;
+    color: #FFD700;
     text-align: inherit;
   }
   .cs-title {
@@ -56,6 +57,7 @@
     line-height: 1.2em;
     font-weight: 900;
     color: var(--headerColor);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
     text-align: inherit;
   }
   .cs-text {

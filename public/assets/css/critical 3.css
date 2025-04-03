@@ -272,6 +272,7 @@
     align-items: center;
   }
   #services-2279 .cs-title {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
     max-width: 20ch;
     color: var(--bodyTextColorWhite);
     margin: 0;
