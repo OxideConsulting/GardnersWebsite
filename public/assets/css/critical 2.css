@@ -50,6 +50,7 @@
   }
   #hero-408 .cs-text {
     /* 16px - 25px */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
     font-size: clamp(1rem, 2vw, 1.5625rem);
     line-height: 1.5em;
     text-align: left;
@@ -273,7 +274,7 @@
   }
   #services-2279 .cs-title {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    max-width: 21ch;
+    max-width: 20ch;
     color: var(--bodyTextColorWhite);
     margin: 0;
   }
@@ -758,6 +759,7 @@
   }
   #sbs-1586 .cs-title {
     /* 26 characters wide including spaces */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
     max-width: 26ch;
     margin: 0;
   }
@@ -970,7 +972,7 @@
   }
 
   #gallery-1374 .cs-topper {
-    color: #c6c6c6;
+    color: #FFD700;
   }
 
   #gallery-1374 .cs-image-group {
@@ -1189,6 +1191,7 @@
     }
 
     #timeline-971 .cs-title {
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
       max-width: 18ch;
     }
 
