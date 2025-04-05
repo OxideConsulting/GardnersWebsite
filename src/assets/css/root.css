@@ -473,7 +473,7 @@
     width: 100%;
     height: auto;
     padding-bottom: 2.4em;
-    background-image: linear-gradient(to bottom left, #000000, #000000ed);
+    background-image: linear-gradient(to bottom left, #ffffff, rgba(255, 255, 255, 0.96));
     border-radius: 0 0 1.5rem 1.5rem;
     position: absolute;
     top: 85%;
@@ -553,17 +553,17 @@
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
-    color: #fff;
+    color: #000000;
     display: inline-block;
     position: relative;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: #FFD700;
+    color: #000000;
+    border-bottom: 2px solid #FFD700;
     font-weight: 800;
-    text-decoration: underline;
   }
   #cs-navigation .cs-li-link:hover {
-    color: #001cb2;
+    color: #000d38;
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -645,7 +645,7 @@
     height: 0;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.65));
+    background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.79));
     opacity: 0;
     display: flex;
     visibility: hidden;
