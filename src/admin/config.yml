@@ -2,7 +2,7 @@ backend:
   name: github
   repo: OxideConsulting/GardnersWebsite
   branch: main
-  identity_url: "/"
+  base_url: https://www.gardnersdigital.com
   auth_endpoint: /api/auth
 
 local_backend: false
