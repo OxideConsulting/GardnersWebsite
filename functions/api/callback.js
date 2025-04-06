@@ -41,7 +41,7 @@ export async function onRequest(context) {
                     'user-agent': 'cloudflare-functions-github-oauth-login-demo',
                     'accept': 'application/json',
                 },
-                body: JSON.stringify({ client_id, client_secret, code }),
+                body: JSON.stringify({ client_id, client_secret, code, redirect_uri: url.origin + '/api/callback' }),
             },
         );
         const result = await response.json();
