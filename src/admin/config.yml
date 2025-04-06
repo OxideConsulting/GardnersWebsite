@@ -1,6 +1,8 @@
 backend:
-    name: git-gateway
-    branch: main
+  name: github
+  repo: OxideConsulting/GardnersWebsite
+  branch: main
+  auth_endpoint: /api/auth
 
 local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
@@ -8,6 +10,8 @@ logo_url: https://oxideconsulting.com/images/OxideLogo710.svg
 
 media_folder: "src/assets/images/blog"
 public_folder: "/assets/images/blog"
+site_domain: "https://gardnersdigital.com"
+base_url: "https://gardnersdigital.com"
 
 collections:
     - name: "blog"
