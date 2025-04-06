@@ -2,7 +2,8 @@ backend:
   name: github
   repo: OxideConsulting/GardnersWebsite
   branch: main
-  auth_endpoint: https://gardnersdigital.com/api/auth
+  identity_url: ""
+  auth_endpoint: api/auth
 
 local_backend: false
 # change url to a link to the image you want to use, no file paths, must be a URL
