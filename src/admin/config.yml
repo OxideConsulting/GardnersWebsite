@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://www.gardnersdigital.com
   auth_endpoint: /api/auth
+  allowed_users:
+    - AdamM107
 
 local_backend: false
 # change url to a link to the image you want to use, no file paths, must be a URL
