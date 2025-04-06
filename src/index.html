@@ -20,22 +20,7 @@ eleventyNavigation:
     <link rel="shortcut icon" href="https://gardnersdigital.com/assets/favicons/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://gardnersdigital.com/assets/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="https://gardnersdigital.com/assets/favicons/site.webmanifest" />
-    <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
-        }
         var CSbody = document.querySelector("body");
         const CSnavbarMenu = document.querySelector("#cs-navigation");
         const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
