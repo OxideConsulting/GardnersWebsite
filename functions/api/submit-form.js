@@ -5,7 +5,7 @@ export async function onRequestPost({ request, env }) {
         const name = formData.get("name");
         const email = formData.get("email");
         const phone = formData.get("phone");
-        const findUs = formData.get("find-us"); // field name in your form is "find-us"
+        const findUs = formData.get("find-us");
         const message = formData.get("Message");
 
         // Construct the email content
@@ -31,12 +31,14 @@ export async function onRequestPost({ request, env }) {
 
         // Retrieve your Mailchannels API key from environment variables
         const apiKey = env.MAILCHANNELS_API_KEY;
+        // Construct the Basic Auth credentials
+        const credentials = btoa(`api:${apiKey}`);
 
         // Send the email via Mailchannels API endpoint
         const response = await fetch("https://api.mailchannels.net/tx/v1/send", {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${apiKey}`,
+                "Authorization": `Basic ${credentials}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(payload),
