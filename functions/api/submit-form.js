@@ -1,10 +1,14 @@
 export async function onRequestPost({ request, env }) {
     try {
-        // Assuming the form submits data as JSON
-        const formData = await request.json();
-        const { name, email, phone, "find-us": findUs, message } = formData;
+        // Parse the incoming form data
+        const formData = await request.formData();
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const phone = formData.get("phone");
+        const findUs = formData.get("find-us"); // field name in your form is "find-us"
+        const message = formData.get("Message");
 
-        // Construct your email content using the form data
+        // Construct the email content
         const emailContent = `
       You have a new contact form submission:
       
@@ -19,8 +23,7 @@ export async function onRequestPost({ request, env }) {
 
         // Prepare the Mailchannels API payload
         const payload = {
-            // Change these fields according to Mailchannels API requirements
-            from: "no-reply@gardnersdigital.com", // Use a valid sender email for your domain
+            from: "no-reply@gardnersdigital.com", // Ensure this is a valid sender email for your domain
             to: "no-reply@gardnersdigital.com",  // Replace with your email
             subject: "New Contact Form Submission",
             text: emailContent,
@@ -29,7 +32,7 @@ export async function onRequestPost({ request, env }) {
         // Retrieve your Mailchannels API key from environment variables
         const apiKey = env.MAILCHANNELS_API_KEY;
 
-        // Send the email via Mailchannels API endpoint (adjust the URL and headers if necessary)
+        // Send the email via Mailchannels API endpoint
         const response = await fetch("https://api.mailchannels.net/tx/v1/send", {
             method: "POST",
             headers: {
