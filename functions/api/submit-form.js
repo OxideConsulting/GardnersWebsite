@@ -23,22 +23,27 @@ export async function onRequestPost({ request, env }) {
 
         // Prepare the Mailchannels API payload
         const payload = {
-            from: "no-reply@gardnersdigital.com", // Ensure this is a valid sender email for your domain
-            to: "no-reply@gardnersdigital.com",  // Replace with your email
+            personalizations: [
+                {
+                    to: [
+                        { email: "no-reply@gardnersdigital.com" }
+                    ]
+                }
+            ],
+            from: { email: "no-reply@gardnersdigital.com" },
             subject: "New Contact Form Submission",
-            text: emailContent,
+            content: [
+                {
+                    type: "text/plain",
+                    value: emailContent
+                }
+            ]
         };
-
-        // Retrieve your Mailchannels API key from environment variables
-        const apiKey = env.MAILCHANNELS_API_KEY;
-        // Construct the Basic Auth credentials
-        const credentials = btoa(`api:${apiKey}`);
 
         // Send the email via Mailchannels API endpoint
         const response = await fetch("https://api.mailchannels.net/tx/v1/send", {
             method: "POST",
             headers: {
-                "Authorization": `Basic ${credentials}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(payload),
