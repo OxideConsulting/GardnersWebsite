@@ -8,43 +8,21 @@ export async function onRequestPost({ request, env }) {
         const findUs = formData.get("find-us");
         const message = formData.get("Message");
 
-        // Construct the email content
-        const emailContent = `
-      You have a new contact form submission:
-      
-      Name: ${name}
-      Email: ${email}
-      Phone: ${phone}
-      Referred By: ${findUs || "N/A"}
-      
-      Message:
-      ${message}
-    `;
-
-        // Prepare the Mailchannels API payload
+        // Construct the Formspree payload
         const payload = {
-            personalizations: [
-                {
-                    to: [
-                        { email: "no-reply@gardnersdigital.com" }
-                    ]
-                }
-            ],
-            from: { email: "no-reply@gardnersdigital.com" },
-            subject: "New Contact Form Submission",
-            content: [
-                {
-                    type: "text/plain",
-                    value: emailContent
-                }
-            ]
+            name: name,
+            email: email,
+            phone: phone,
+            findUs: findUs || "N/A",
+            message: message
         };
 
-        // Send the email via Mailchannels API endpoint
-        const response = await fetch("https://api.mailchannels.net/tx/v1/send", {
+        // Send the email via Formspree API endpoint
+        const response = await fetch("https://formspree.io/f/<yourFormID>", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Accept": "application/json"
             },
             body: JSON.stringify(payload),
         });
