@@ -150,6 +150,13 @@ eleventyNavigation:
             </div>
         </div>
     </section>
+<style>
+    #my-form-status {
+        margin-top: 2em;
+        font-size: 20px;
+        color: #fff400;
+    }
+</style>
 <script>
   var form = document.getElementById("cs-form");
 
@@ -165,7 +172,7 @@ eleventyNavigation:
       }
     }).then(response => {
       if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
+        status.innerHTML = "Thanks for reaching out! We'll be in touch soon.";
         form.reset();
       } else {
         response.json().then(data => {
