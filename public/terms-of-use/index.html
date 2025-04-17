@@ -1,5 +1,3 @@
-<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,6 +25,15 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Gardners" />
         <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Gardners Digital Solutions",
+          "url": "https://gardnersdigital.com/"
+        }
+        </script>
 
         <!-- Preloads -->
         <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
@@ -578,7 +585,7 @@
             <div class="lists">
                 <ul>
                     <li>
-                        <h2>Pages</h2>
+                        <h2>Links</h2>
                     </li>
                     <li>
                         <a href="/">Home</a>
@@ -615,16 +622,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <h2>Contact</h2>
-                    </li>
-                    <li>
-                        <a href="/contact">
-                            950 Walnut Bottom Rd<br>
-                            Suite 15 #203<br>
-                            Carlisle
-                            PA
-                            17015
-                        </a>
+                        <h2>Contact 24/7</h2>
                     </li>
                     <li>
                         <a href="tel:717-818-1625">
@@ -633,6 +631,13 @@
                     </li>
                     <li>
                         <a href="mailto:info@gardnersdigital.com">info@gardnersdigital.com</a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            Carlisle
+                            PA,
+                            17015
+                        </a>
                     </li>
                 </ul>
             </div>

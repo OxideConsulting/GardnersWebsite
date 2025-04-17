@@ -14,7 +14,7 @@
             <div class="lists">
                 <ul>
                     <li>
-                        <h2>Pages</h2>
+                        <h2>Links</h2>
                     </li>
                     <li>
                         <a href="/">Home</a>
@@ -51,16 +51,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <h2>Contact</h2>
-                    </li>
-                    <li>
-                        <a href="/contact">
-                            {{client.address.lineOne}}<br>
-                            {{client.address.lineTwo}}<br>
-                            {{client.address.city}}
-                            {{client.address.state}}
-                            {{client.address.zip}}
-                        </a>
+                        <h2>Contact 24/7</h2>
                     </li>
                     <li>
                         <a href="tel:{{client.phoneForTel}}">
@@ -69,6 +60,13 @@
                     </li>
                     <li>
                         <a href="mailto:{{client.email}}">info@gardnersdigital.com</a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            {{client.address.city}}
+                            {{client.address.state}},
+                            {{client.address.zip}}
+                        </a>
                     </li>
                 </ul>
             </div>

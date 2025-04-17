@@ -127,19 +127,6 @@ eleventyNavigation:
                 <!--Phone-->
                 <span class="cs-header">Phone</span>
                 <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br/>
-                    {{client.address.lineTwo}},
-                    <br/>
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
@@ -150,6 +137,56 @@ eleventyNavigation:
             </div>
         </div>
     </section>
+
+<!-- ============================================ -->
+<!--                  Timeline                    -->
+<!-- ============================================ -->
+
+<section id="timeline-971">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Process</span>
+            <h2 class="cs-title">Getting Started</h2>
+            <p class="cs-text">
+                We simplify establishing a powerful online presence—fast, easy, and affordable.
+                In just four clear steps, we’ll unlock a whole new way for you to reach your customers.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinephone.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Contact Us</h3>
+                <p class="cs-item-text">
+                    Give us a call, text, or email anytime, and we’ll set up a meeting to learn more about you and your business. We’ll chat about design and content ideas, and outline what your new site will look like.
+                    Before we start, we review and sign a straightforward contract—completely cancellable if you’re not satisfied with our designs. No pressure, no hassle.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinemeeting.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Initial Meeting</h3>
+                <p class="cs-item-text">
+                    During a live video meeting, we present our initial ideas, refine the design based on your feedback, and finalize it together.
+                    And remember—for our monthly subscription model, no upfront payment is required.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinedev.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Design and Development</h3>
+                <p class="cs-item-text">
+                    Over the next 7-10 days, we'll get to work on building and optimizing your site, keeping you informed along the way.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img  src="/assets/svgs/timelinelive.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Go Live!</h3>
+                <p class="cs-item-text">
+                    Once your site is complete, we'll launch it online and ensure it's set up for Google visibility.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
 <style>
     #my-form-status {
         margin-top: 2em;

@@ -1,5 +1,3 @@
-<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,6 +25,15 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Gardners" />
         <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Gardners Digital Solutions",
+          "url": "https://gardnersdigital.com/"
+        }
+        </script>
 
         <!-- Preloads -->
         <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
@@ -375,7 +382,7 @@
 
     <section id="cs-contact">
         <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
+            <form id="cs-form" action="https://formspree.io/f/xvgkvlak" method="POST">
                 <div class="cs-content">
                     <span class="cs-topper"></span>
                     <h2 class="cs-title">Get in Touch</h2>
@@ -404,6 +411,7 @@
                     <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
                 </label>
                 <button class="cs-button-solid" type="submit">Submit Message</button>
+                <p id="my-form-status"></p>
             </form>
             <div class="cs-right-section">
                 <!--Email-->
@@ -412,19 +420,6 @@
                 <!--Phone-->
                 <span class="cs-header">Phone</span>
                 <a class="cs-link" href="tel:717-818-1625">(717) 818-1625</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="https://maps.app.goo.gl">
-                    950 Walnut Bottom Rd,
-                    <br/>
-                    Suite 15 #203,
-                    <br/>
-                    <span class="cs-block">
-                        Carlisle
-                        PA
-                        17015
-                    </span>
-                </a>
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
@@ -435,6 +430,96 @@
             </div>
         </div>
     </section>
+
+<!-- ============================================ -->
+<!--                  Timeline                    -->
+<!-- ============================================ -->
+
+<section id="timeline-971">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Process</span>
+            <h2 class="cs-title">Getting Started</h2>
+            <p class="cs-text">
+                We simplify establishing a powerful online presence—fast, easy, and affordable.
+                In just four clear steps, we’ll unlock a whole new way for you to reach your customers.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinephone.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Contact Us</h3>
+                <p class="cs-item-text">
+                    Give us a call, text, or email anytime, and we’ll set up a meeting to learn more about you and your business. We’ll chat about design and content ideas, and outline what your new site will look like.
+                    Before we start, we review and sign a straightforward contract—completely cancellable if you’re not satisfied with our designs. No pressure, no hassle.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinemeeting.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Initial Meeting</h3>
+                <p class="cs-item-text">
+                    During a live video meeting, we present our initial ideas, refine the design based on your feedback, and finalize it together.
+                    And remember—for our monthly subscription model, no upfront payment is required.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img src="/assets/svgs/timelinedev.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Design and Development</h3>
+                <p class="cs-item-text">
+                    Over the next 7-10 days, we'll get to work on building and optimizing your site, keeping you informed along the way.
+                </p>
+            </li>
+            <li class="cs-item">
+                <img  src="/assets/svgs/timelinelive.svg" alt="icon" class="cs-icon" aria-hidden="true" decoding="async" width="60" height="60">
+                <h3 class="cs-h3">Go Live!</h3>
+                <p class="cs-item-text">
+                    Once your site is complete, we'll launch it online and ensure it's set up for Google visibility.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    #my-form-status {
+        margin-top: 2em;
+        font-size: 20px;
+        color: #fff400;
+    }
+</style>
+<script>
+  var form = document.getElementById("cs-form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for reaching out! We'll be in touch soon.";
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (data.hasOwnProperty('errors')) {
+            status.innerHTML = data.errors.map(error => error.message).join(", ");
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          }
+        });
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
 
         </main>
         <!-- ============================================ -->
@@ -453,7 +538,7 @@
             <div class="lists">
                 <ul>
                     <li>
-                        <h2>Pages</h2>
+                        <h2>Links</h2>
                     </li>
                     <li>
                         <a href="/">Home</a>
@@ -490,16 +575,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <h2>Contact</h2>
-                    </li>
-                    <li>
-                        <a href="/contact">
-                            950 Walnut Bottom Rd<br>
-                            Suite 15 #203<br>
-                            Carlisle
-                            PA
-                            17015
-                        </a>
+                        <h2>Contact 24/7</h2>
                     </li>
                     <li>
                         <a href="tel:717-818-1625">
@@ -508,6 +584,13 @@
                     </li>
                     <li>
                         <a href="mailto:info@gardnersdigital.com">info@gardnersdigital.com</a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            Carlisle
+                            PA,
+                            17015
+                        </a>
                     </li>
                 </ul>
             </div>
