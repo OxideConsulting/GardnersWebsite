@@ -25,20 +25,15 @@
 
 <body>
     <div id="app">
-        <nav class="nav">
-            <div class="container"
-                style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <a href="/" class="nav-brand" style="text-decoration: none;">
-                    <img src="/assets/svgs/logo-white.svg" alt="Gardners Digital Solutions"
-                        style="height: 40px; width: auto; display: block;">
+        <nav class="nav" aria-label="Main navigation">
+            <div class="container">
+                <a href="/" class="nav-brand">
+                    <img src="/assets/svgs/logo-white.svg" alt="Gardners Digital Solutions">
                 </a>
-                <div class="nav-links" style="display: flex; gap: 2rem;">
-                    <a href="/services/"
-                        style="color: var(--color-text-muted); text-decoration: none; font-size: 0.9rem;">Services</a>
-                    <a href="/about/"
-                        style="color: var(--color-text-muted); text-decoration: none; font-size: 0.9rem;">About</a>
-                    <a href="/contact/"
-                        style="color: var(--color-primary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">Contact</a>
+                <div class="nav-links">
+                    <a href="/services/" class="nav-link">Services</a>
+                    <a href="/about/" class="nav-link">About</a>
+                    <a href="/contact/" class="nav-link nav-link--active">Contact</a>
                 </div>
             </div>
         </nav>
@@ -55,53 +50,44 @@
 
             <section class="contact scroll-reveal">
                 <div class="container">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                    <div class="contact-grid">
                         <div class="contact-info">
-                            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--color-accent);">Get in Touch</h2>
-                            <p style="color: var(--color-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+                            <h2>Get in Touch</h2>
+                            <p>
                                 Have a project in mind, or just want to explore what's possible? We'd love to hear from you.
                             </p>
-                            <div style="margin-bottom: 2rem;">
-                                <h3 style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;">Email</h3>
-                                <a href="mailto:info@gardnersdigital.com"
-                                    style="color: var(--color-primary); text-decoration: none; font-size: 1.1rem;">info@gardnersdigital.com</a>
+                            <div class="contact-detail">
+                                <h3>Email</h3>
+                                <a href="mailto:info@gardnersdigital.com">info@gardnersdigital.com</a>
                             </div>
-                            <div style="margin-bottom: 2rem;">
-                                <h3 style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;">Location</h3>
-                                <p style="color: var(--color-text-muted);">Carlisle, PA</p>
+                            <div class="contact-detail">
+                                <h3>Location</h3>
+                                <p>Carlisle, PA</p>
                             </div>
                         </div>
 
-                        <div class="contact-form-wrapper"
-                            style="background: var(--color-surface-raised); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid var(--glass-border);">
+                        <div class="contact-form-wrapper">
                             <form action="https://api.web3forms.com/submit" method="POST">
                                 <input type="hidden" name="access_key" value="a534290b-8d3b-4dd0-9f6d-7ea413318e30">
                                 <input type="hidden" name="subject" value="New Contact from Gardners Digital">
                                 <input type="hidden" name="redirect" value="https://www.gardnersdigital.com/contact/">
                                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label
-                                        style="display: block; color: var(--color-text-muted); margin-bottom: 0.5rem;">Name</label>
-                                    <input type="text" name="name" required
-                                        style="width: 100%; padding: 1rem; background: var(--color-base); border: 1px solid var(--glass-border); border-radius: 0.5rem; color: white;"
-                                        placeholder="Your Name">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">Name</label>
+                                    <input type="text" id="contact-name" name="name" required
+                                        class="form-input" placeholder="Your Name">
                                 </div>
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label
-                                        style="display: block; color: var(--color-text-muted); margin-bottom: 0.5rem;">Email</label>
-                                    <input type="email" name="email" required
-                                        style="width: 100%; padding: 1rem; background: var(--color-base); border: 1px solid var(--glass-border); border-radius: 0.5rem; color: white;"
-                                        placeholder="john@company.com">
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">Email</label>
+                                    <input type="email" id="contact-email" name="email" required
+                                        class="form-input" placeholder="john@company.com">
                                 </div>
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label
-                                        style="display: block; color: var(--color-text-muted); margin-bottom: 0.5rem;">Message</label>
-                                    <textarea rows="4" name="message" required
-                                        style="width: 100%; padding: 1rem; background: var(--color-base); border: 1px solid var(--glass-border); border-radius: 0.5rem; color: white;"
-                                        placeholder="Tell us about your project..."></textarea>
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">Message</label>
+                                    <textarea rows="4" id="contact-message" name="message" required
+                                        class="form-textarea" placeholder="Tell us about your project..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Send
-                                    Message</button>
+                                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                             </form>
                         </div>
                     </div>
@@ -114,7 +100,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <img src="/assets/svgs/logo-white.svg" alt="logo" style="height: 30px;">
+                        <img src="/assets/svgs/logo-white.svg" alt="Gardners Digital Solutions">
                         <p>Digital infrastructure built for the long haul.</p>
                     </div>
                     <div class="footer-nav">
@@ -126,7 +112,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Gardners Digital Solutions. All rights reserved.</p>
+                    <p>&copy; 2026 Gardners Digital Solutions. All rights reserved.</p>
                 </div>
             </div>
         </footer>
