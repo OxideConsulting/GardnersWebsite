@@ -290,25 +290,34 @@ h3 {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-base);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(0, 255, 65, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 65, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .btn-secondary {
-    border: 1px solid var(--glass-border);
-    background-color: var(--glass);
-    color: var(--color-primary);
-    backdrop-filter: var(--glass-blur);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-surface-raised);
-    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 /* Value Proposition Section */
